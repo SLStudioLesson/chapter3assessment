@@ -1,0 +1,83 @@
+[
+    {
+      "name": "Tomato Soup",
+      "ingredients": ["Tomatoes", "Onion", "Garlic", "Vegetable Stock"]
+    },
+    {
+      "name": "Chicken Curry",
+      "ingredients": ["Chicken", "Curry Powder", "Onion", "Garlic", "Ginger"]
+    },
+    {
+      "name": "Beef Stew",
+      "ingredients": ["Beef", "Potatoes", "Carrots", "Onion", "Beef Stock"]
+    },
+    {
+      "name": "Vegetable Stir Fry",
+      "ingredients": ["Broccoli", "Carrot", "Bell Peppers", "Soy Sauce"]
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "ingredients": ["Ground Beef", "Tomato Sauce", "Onion", "Garlic", "Spaghetti"]
+    },
+    {
+      "name": "Caesar Salad",
+      "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"]
+    },
+    {
+      "name": "Grilled Salmon",
+      "ingredients": ["Salmon", "Lemon", "Garlic", "Olive Oil"]
+    },
+    {
+      "name": "Pancakes",
+      "ingredients": ["Flour", "Milk", "Egg", "Butter", "Maple Syrup"]
+    },
+    {
+      "name": "Chocolate Cake",
+      "ingredients": ["Flour", "Cocoa Powder", "Baking Powder", "Eggs", "Sugar"]
+    },
+    {
+      "name": "Lasagna",
+      "ingredients": ["Ground Beef", "Lasagna Noodles", "Ricotta Cheese", "Tomato Sauce"]
+    },
+    {
+      "name": "Tacos",
+      "ingredients": ["Ground Beef", "Taco Shells", "Lettuce", "Tomato", "Cheese"]
+    },
+    {
+      "name": "French Toast",
+      "ingredients": ["Bread", "Egg", "Milk", "Cinnamon", "Sugar"]
+    },
+    {
+      "name": "Mushroom Risotto",
+      "ingredients": ["Arborio Rice", "Mushrooms", "Onion", "Chicken Stock", "Parmesan Cheese"]
+    },
+    {
+      "name": "Quiche Lorraine",
+      "ingredients": ["Eggs", "Cream", "Bacon", "Cheese", "Pie Crust"]
+    },
+    {
+      "name": "Ratatouille",
+      "ingredients": ["Eggplant", "Zucchini", "Bell Pepper", "Tomato", "Onion"]
+    },
+    {
+      "name": "Chicken Alfredo",
+      "ingredients": ["Chicken", "Fettuccine", "Cream", "Parmesan Cheese", "Garlic"]
+    },
+    {
+      "name": "BBQ Ribs",
+      "ingredients": ["Pork Ribs", "BBQ Sauce", "Garlic", "Brown Sugar"]
+    },
+    {
+      "name": "Vegetable Soup",
+      "ingredients": ["Carrots", "Potatoes", "Celery", "Tomato", "Vegetable Stock"]
+    },
+    {
+      "name": "Macaroni and Cheese",
+      "ingredients": ["Macaroni", "Cheddar Cheese", "Milk", "Butter", "Flour"]
+    },
+    {
+      "name": "Banana Bread",
+      "ingredients": ["Bananas", "Flour", "Sugar", "Baking Soda", "Eggs"]
+    }
+  ]
+  
