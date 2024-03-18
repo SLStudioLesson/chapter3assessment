@@ -17,8 +17,6 @@
 
   - `src/main/java/ui/RecipeUI.java` - 表示に関連したクラス
 
-  - `src/main/java/data/RecipeFileHandler.java` - データ操作に関連したクラス
-
   - `src/main/resources/recipes.csv` - レシピのデータ(CSV)
 
     - ファイルの各行は、単一のレシピを表し、レシピ名と主な材料がカンマ区切りで記載されています。
@@ -232,11 +230,11 @@ JSONは「JavaScriptオブジェクト記法」の略で、データをテキス
 
 以下のメソッドを定義し、コメントアウトを使用してプログラムの流れを説明する内容を記述してください。
 
-`src/main/java/com/recipeapp/datahandler/CSVFileHandler.java` 
+`src/main/java/com/recipeapp/datahandler/CSVDataHandler.java` 
 
 | メソッド名    | 戻り値の型     | 引数 | 説明                                                         |
 | ------------- | -------------- | ---- | ------------------------------------------------------------ |
-| `readRecipes` | `ArrayList<Recipe>` | なし | `recipes.csv`からレシピデータを読み込み、それをリスト形式で返します。 |
+| `readData` | `ArrayList<Recipe>` | なし | `recipes.csv`からレシピデータを読み込み、それをリスト形式で返します。 |
 
 `src/main/java/com/recipeapp/ui/RecipeUI.java`
 
