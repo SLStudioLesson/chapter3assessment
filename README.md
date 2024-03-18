@@ -63,13 +63,13 @@
 | クラス名 | 属性          | 型                 | 説明               |
 | -------- | ------------- | ------------------ | ------------------ |
 | `Recipe` | `name`        | `String`           | レシピの名前       |
-|          | `ingredients` | `List<Ingredient>` | レシピの材料リスト |
+|          | `ingredients` | `ArrayList<Ingredient>` | レシピの材料リスト |
 
 | メソッド名       | 戻り値の型         | 引数                                        | 説明                         |
 | ---------------- | ------------------ | ------------------------------------------- | ---------------------------- |
-| コンストラクタ   |                    | `String name, List<Ingredient> ingredients` | レシピ名と材料リストを初期化 |
+| コンストラクタ   |                    | `String name, ArrayList<Ingredient> ingredients` | レシピ名と材料リストを初期化 |
 | `getName`        | `String`           | なし                                        | レシピ名を返す               |
-| `getIngredients` | `List<Ingredient>` | なし                                        | 材料リストを返す             |
+| `getIngredients` | `ArrayList<Ingredient>` | なし                                        | 材料リストを返す             |
 
 
 
@@ -101,9 +101,9 @@
 | インターフェース名 | メソッド名   | 戻り値の型     | 引数             | 説明                                                         |
 | ------------------ | ------------ | -------------- | ---------------- | ------------------------------------------------------------ |
 | `DataHandler`      | getMode      | String         | なし             | 現在のモードを返します。                                     |
-|                    | `readData`   | `List<Recipe>` | なし             | レシピデータを読み込み、`Recipe`オブジェクトのリストとして返します。 |
+|                    | `readData`   | `ArrayList<Recipe>` | なし             | レシピデータを読み込み、`Recipe`オブジェクトのリストとして返します。 |
 |                    | `writeData`  | `void`         | `Recipe recipe`  | 指定された`Recipe`オブジェクトを追加します。                 |
-|                    | `searchData` | `List<Recipe>` | `String keyword` | 指定されたキーワードでレシピを検索し、一致する`Recipe`オブジェクトのリストを返します。 |
+|                    | `searchData` | `ArrayList<Recipe>` | `String keyword` | 指定されたキーワードでレシピを検索し、一致する`Recipe`オブジェクトのリストを返します。 |
 
 ### ステップ2： 実装の確認
 
@@ -236,7 +236,7 @@ JSONは「JavaScriptオブジェクト記法」の略で、データをテキス
 
 | メソッド名    | 戻り値の型     | 引数 | 説明                                                         |
 | ------------- | -------------- | ---- | ------------------------------------------------------------ |
-| `readRecipes` | `List<Recipe>` | なし | `recipes.csv`からレシピデータを読み込み、それをリスト形式で返します。 |
+| `readRecipes` | `ArrayList<Recipe>` | なし | `recipes.csv`からレシピデータを読み込み、それをリスト形式で返します。 |
 
 `src/main/java/com/recipeapp/ui/RecipeUI.java`
 
@@ -365,7 +365,7 @@ Recipe added successfully.
 
 | メソッド名   | 戻り値の型     | 引数     | 説明                                                         |
 | ------------ | -------------- | -------- | ------------------------------------------------------------ |
-| `searchData` | `List<Recipe>` | `String` | 検索クエリを受け取り、そのクエリに基づいてレシピを検索し、一致するレシピを返します。 |
+| `searchData` | `ArrayList<Recipe>` | `String` | 検索クエリを受け取り、そのクエリに基づいてレシピを検索し、一致するレシピを返します。 |
 
 `src/main/java/com/recipeapp/ui/RecipeUI.java`
 
