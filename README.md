@@ -198,6 +198,39 @@ JSONは「JavaScriptオブジェクト記法」の略で、データをテキス
 - 不正な入力（「1」「2」以外）が与えられた場合、`CSVDataHandler`インスタンスを生成する
 - 選択されたデータハンドラーを`com/recipeapp`パッケージの`RecipeUI`に渡し、`displayMenu`メソッドを呼び出してメインメニューを表示します。
 
+**出力例**  
+- フォーマット選択画面
+```
+Choose the file format:
+1. CSV
+2. JSON
+Select (1/2):
+```
+- フォーマット選択画面で "1" 、または "2" 以外を入力した場合
+```
+Current mode: CSV
+```
+```
+Main Menu:
+1: Display Recipes
+2: Add New Recipe
+3: Search Recipe
+4: Exit Application
+Please choose an option:
+```
+- フォーマット選択画面で "2" を入力した場合
+```
+Current mode: JSON
+```
+```
+Main Menu:
+1: Display Recipes
+2: Add New Recipe
+3: Search Recipe
+4: Exit Application
+Please choose an option:
+```
+
 ### ステップ1：プログラムの設計
 
 コメントアウトを使用してプログラムの流れを説明する内容を記述してください。
