@@ -347,7 +347,7 @@ Recipe added successfully.
 - 登録した内容が`recipes.csv`ファイルに正しく追加されていること
 
 
-#### (※IOExceptionが発生する場合の動作確認をする必要はありません)
+**(※`IOException`が送信される場合の動作は確認する必要はありません。)**
 
 
 ## 設問7: 検索機能
