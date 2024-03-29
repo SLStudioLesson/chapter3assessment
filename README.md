@@ -199,7 +199,7 @@ JSONは「JavaScriptオブジェクト記法」の略で、データをテキス
 - 選択されたデータハンドラーを`com/recipeapp`パッケージの`RecipeUI`に渡し、`displayMenu`メソッドを呼び出してメインメニューを表示します。
 
 **出力例**  
-- フォーマット選択画面
+- ファイル形式選択メニュー
 ```
 Choose the file format:
 1. CSV
