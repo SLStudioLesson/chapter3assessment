@@ -218,7 +218,7 @@ Main Menu:
 4: Exit Application
 Please choose an option:
 ```
-- フォーマット選択画面で "2" を入力した場合
+- ファイル形式選択メニューで "2" を入力した場合
 ```
 Current mode: JSON
 ```
