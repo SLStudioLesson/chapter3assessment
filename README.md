@@ -276,7 +276,7 @@ Please choose an option:
 | `displayRecipes` | `void`     | なし | なし | - `DataHandler`から読み込んだレシピデータを整形してコンソールに表示します。 <br> - IOExceptionを受け取った場合は`Error reading file: 例外のメッセージ`とコンソールに表示します <br> - 表示形式は以下の出力例を再現してください。 |
 
 
-出力例
+**出力例**(レシピデータが存在する場合)
 ```
 Main Menu:
 1: Display Recipes
@@ -299,7 +299,10 @@ Main Ingredients: Beef, Potatoes, Carrots, Onion, Beef Stock
 
 以下省略
 ```
-
+**出力例**(レシピデータが1件も存在しない場合)
+```
+No recipes available.
+```
 
 
 ### ステップ2：プログラムの実装
@@ -310,11 +313,32 @@ Main Ingredients: Beef, Potatoes, Carrots, Onion, Beef Stock
 
 #### テストケース1
 
-- `recipes.csv`ファイルに複数のレシピが記載されている場合、すべてのレシピが正しく一覧表示されることを確認します。
+- コンソールにメインメニューが表示されている時、 "1" を入力すると以下の出力が表示されることを確認します。
+```
+Recipes:
+-----------------------------------
+Recipe Name: Tomato Soup
+Main Ingredients: Tomatoes, Onion, Garlic, Vegetable Stock
+-----------------------------------
+Recipe Name: Chicken Curry
+Main Ingredients: Chicken, Curry Powder, Onion, Garlic, Ginger
+-----------------------------------
+Recipe Name: Beef Stew
+Main Ingredients: Beef, Potatoes, Carrots, Onion, Beef Stock
+-----------------------------------
+
+以下省略
+```
 
 #### テストケース2
 
-- `recipes.csv`ファイルが空の場合、"No recipes available."というメッセージが表示されることを確認します。
+- `recipes.csv`ファイルの内容を全て削除した後、テストケース1の手順を行った場合に以下のメッセージがコンソールに表示された後、メインメニューのことを確認します。  
+```
+No recipes available.
+```
+- 表示が確認できた場合は、`recipes.csv`ファイルの内容を復元してください。
+
+<br/>
 
 **(※`IOException`が送信される場合の動作は確認する必要はありません。)**
 
@@ -346,7 +370,7 @@ Main Ingredients: Beef, Potatoes, Carrots, Onion, Beef Stock
 | -------------- | ---------- | ---- | -------------- | ------------------------------------------------------------ |
 | `addNewRecipe` | `void`     | なし | なし | - ユーザーからレシピ名と主な材料を入力させ、`DataHandler`を使用して`recipes.csv`に新しいレシピを追加します。 <br> - IOExceptionを受け取った場合は`Failed to add new recipe: 例外のメッセージ`とコンソールに表示してください。 <br> - 材料の入力は`done`と入力するまで入力を受け付けます。 <br> - 表示形式は以下の出力例を再現してください。 |
 
-表示例
+**出力例**
 
 ```
 Main Menu:
@@ -376,9 +400,24 @@ Recipe added successfully.
 
 #### **テストケース1**
 
-- レシピ名と主な材料を入力し、`"Recipe added successfully."`というメッセージが表示されること
-- 登録した内容が`recipes.csv`ファイルに正しく追加されていること
+- コンソールにメインメニューが表示されている時 "2" を入力後、以下の入出力例通りにレシピ名と主な材料を入力した場合、入力完了後に `"Recipe added successfully."` というメッセージが表示されることを確認します。
 
+```
+Adding a new recipe.
+Enter recipe name: Pancakes
+Enter ingredients (type 'done' when finished):
+Ingredient: Flour
+Ingredient: Milk
+Ingredient: Eggs
+Ingredient: done
+Recipe added successfully.
+```
+- 上記手順後、`recipes.csv`ファイルの末尾行に以下データが正しく追加されていることを確認します。
+```
+Pancakes,Flour,Milk,Eggs
+```
+  
+<br/>
 
 **(※`IOException`が送信される場合の動作は確認する必要はありません。)**
 
@@ -408,11 +447,11 @@ Recipe added successfully.
 | メソッド名     | 戻り値の型 | 引数 | 送信される例外 | 説明                                                         |
 | -------------- | ---------- | ---- | -------------- | ------------------------------------------------------------ |
 | `searchRecipe` | `void`     | なし | なし | - ユーザーから検索クエリを入力させ、`DataHandler`から検索結果を受け取り、受け取った結果をコンソールに表示します。 <br> - 検索クエリは`name`と`ingredient`のキーをサポートし、`&`で複数の条件を組み合わせることができます。 <br>  (例: `name=Soup&ingredient=Tomato`は、名前に"Soup"を含み、材料に"Tomato"を含むレシピを検索します。)  <br> - 一致するレシピがある場合は、そのレシピの名前と主な材料をコンソールに表示します。 <br> - 一致するレシピがない場合は、`No matching recipes found.`とコンソールに出力します。 <br> - IOExceptionを受け取った場合は`Failed to search recipes: 例外のメッセージ`とコンソールに表示します。 <br> - 表示形式は以下の出力例を再現してください。|
+  
+  <br/>
 
-出力例
-
+**出力例**(一致するレシピデータが1件以上存在する場合)
 ```
-// 一致するレシピがある場合
 Main Menu:
 1: Display Recipes
 2: Add New Recipe
@@ -430,10 +469,8 @@ Ingredients: Carrots, Potatoes, Celery, Tomato, Vegetable Stock,
 
 ```
 
-
-
+**出力例**  (一致するレシピデータが1件も存在しない場合)
 ```
-// 一致するレシピがない場合
 Main Menu:
 1: Display Recipes
 2: Add New Recipe
@@ -457,11 +494,28 @@ No matching recipes found.
 
 #### **テストケース1**
 
-- 検索クエリ`name=Soup&ingredient=Tomato`を入力し、条件に一致するレシピが表示されることを確認します。
+- コンソールにメインメニューが表示されている時 "3" を入力後、検索クエリ`name=Soup&ingredient=Tomato`を入力した場合、以下の入出力例通りに条件に一致するレシピが表示されることを確認します。  
+
+```
+Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): name=Soup&ingredient=Tomato
+
+Matching Recipes:
+Name: Tomato Soup
+Ingredients: Tomatoes, Onion, Garlic, Vegetable Stock,
+
+Name: Vegetable Soup
+Ingredients: Carrots, Potatoes, Celery, Tomato, Vegetable Stock,
+```
 
 #### **テストケース2**
 
-- 検索クエリ`name=Pizza`を入力し、`No matching recipes found.`というメッセージが表示されることを確認します。
+- コンソールにメインメニューが表示されている時 "3" を入力後、検索クエリ`name=Pizza`を入力し、以下の入出力例通りに`No matching recipes found.`というメッセージが表示されることを確認します。  
+```
+Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): pizza
+
+No matching recipes found.
+```
+<br/>
 
 
 **(※`IOException`が送信される場合の動作は確認する必要はありません。)**
