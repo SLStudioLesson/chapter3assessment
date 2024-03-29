@@ -431,4 +431,4 @@ No matching recipes found.
 - 検索クエリ`name=Pizza`を入力し、`No matching recipes found.`というメッセージが表示されることを確認します。
 
 
-#### (※IOExceptionが発生する場合の動作確認をする必要はありません)
+**(※`IOException`が送信される場合の動作は確認する必要はありません。)**
