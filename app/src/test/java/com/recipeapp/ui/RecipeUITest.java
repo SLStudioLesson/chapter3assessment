@@ -1,24 +1,25 @@
 package com.recipeapp.ui;
 
-import com.recipeapp.datahandler.DataHandler;
-import com.recipeapp.model.Recipe;
-import com.recipeapp.model.Ingredient;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.junit.jupiter.api.extension.ExtendWith;
+import static org.mockito.Mockito.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import static org.mockito.Mockito.when;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.recipeapp.datahandler.DataHandler;
+import com.recipeapp.model.Ingredient;
+import com.recipeapp.model.Recipe;
 
 @ExtendWith(MockitoExtension.class)
 public class RecipeUITest {
@@ -47,10 +48,10 @@ public class RecipeUITest {
 
         // モックの振る舞いを設定（レシピリストを返す）
         when(mockDataHandler.getMode()).thenReturn("CSV");
-        List<Recipe> recipes = Arrays.asList(
-            new Recipe("Tomato Soup", Arrays.asList(new Ingredient("Tomatoes"), new Ingredient("Onion"))),
-            new Recipe("Chicken Curry", Arrays.asList(new Ingredient("Chicken"), new Ingredient("Curry Powder")))
-        );
+        ArrayList<Recipe> recipes = new ArrayList<>(Arrays.asList(
+            new Recipe("Tomato Soup", new ArrayList<>(Arrays.asList(new Ingredient("Tomatoes"), new Ingredient("Onion")))),
+            new Recipe("Chicken Curry", new ArrayList<>(Arrays.asList(new Ingredient("Chicken"), new Ingredient("Curry Powder"))))
+        ));
         when(mockDataHandler.readData()).thenReturn(recipes);
 
         RecipeUI ui = new RecipeUI(mockDataHandler);
@@ -86,9 +87,9 @@ public class RecipeUITest {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         // 検索結果のモックを設定
-        List<Recipe> searchResults = Arrays.asList(
-            new Recipe("Pancakes", Arrays.asList(new Ingredient("Flour"), new Ingredient("Milk"), new Ingredient("Eggs")))
-        );
+        ArrayList<Recipe> searchResults = new ArrayList<>(Arrays.asList(
+            new Recipe("Pancakes", new ArrayList<>(Arrays.asList(new Ingredient("Flour"), new Ingredient("Milk"), new Ingredient("Eggs"))))
+        ));
         when(mockDataHandler.searchData("name=Pancakes")).thenReturn(searchResults);
 
         RecipeUI ui = new RecipeUI(mockDataHandler);

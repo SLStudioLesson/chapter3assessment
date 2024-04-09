@@ -1,16 +1,20 @@
 package com.recipeapp.datahandler;
 
-import com.recipeapp.model.Recipe;
-import com.recipeapp.model.Ingredient;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
+import com.recipeapp.model.Ingredient;
+import com.recipeapp.model.Recipe;
 
 class CSVDataHandlerTest {
 
@@ -48,7 +52,7 @@ class CSVDataHandlerTest {
 
     @Test
     void testWriteData() throws IOException {
-        Recipe newRecipe = new Recipe("Pancakes", List.of(new Ingredient("Flour"), new Ingredient("Milk")));
+        Recipe newRecipe = new Recipe("Pancakes", new ArrayList<>(List.of(new Ingredient("Flour"), new Ingredient("Milk"))));
         handler.writeData(newRecipe);
 
         List<Recipe> recipes = handler.readData();
