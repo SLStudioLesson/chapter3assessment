@@ -535,7 +535,7 @@ Ingredients: Carrots, Potatoes, Celery, Tomato, Vegetable Stock,
 
 入出力例:
 ```
-Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): pizza
+Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): name=Pizza
 
 No matching recipes found.
 ```
