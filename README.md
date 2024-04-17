@@ -493,7 +493,7 @@ Main Menu:
 3: Search Recipe
 4: Exit Application
 Please choose an option: 3
-Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): pizza
+Enter search query (e.g., 'name=Tomato&ingredient=Garlic'): name=Pizza
 
 No matching recipes found.
 ```
